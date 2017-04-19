@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页 - 九樟学社</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="full-page">
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<div class="swiper-images">
+		        		<img src="assets/images/index-1.jpg">
+		        	</div>
+		        </div>
+		        <div class="swiper-slide">
+		        	<div class="swiper-images">
+		        		<img src="assets/images/index-2.jpg">
+		        	</div>
+		        </div>
+		        <div class="swiper-slide">
+		        	<div class="swiper-images">
+		        		<img src="assets/images/index-3.jpg">
+		        	</div>
+		        </div>
+		        <div class="swiper-slide">
+		        	<div class="swiper-images">
+		        		<img src="assets/images/index-4.jpg">
+		        	</div>
+		        </div>
+		        <div class="swiper-slide">
+		        	<div class="swiper-images">
+		        		<img src="assets/images/index-5.jpg">
+		        	</div>
+		        </div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="assets/js/zepto.min.js"></script>
+	<script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+		   var mySwiper = new Swiper ('.swiper-container', {
+			    loop: true,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+				width : window.innerWidth,
+			    height : window.innerHeight
+			}); 
+		   $('.swiper-images').height(window.innerHeight);
+		});
+	</script>
+</html>

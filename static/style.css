@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	font: 14px/1.5 "Helvetica Neue", "Microsoft Yahei",Helvetica, Arial, sans-serif;
+	background: #ffffff;
+}
+.full-page{
+	width: 100%;
+	height: 100%;
+}
+.swiper-images {
+	position: relative;
+}
+.swiper-images > img{
+	filter: grayscale(100%);
+}
+.swiper-pagination-bullet{
+	background: #fff;
+	opacity: .5;
+	width: 12px;
+	height: 12px;
+}
+.swiper-pagination-bullet-active{
+	background: #d33e3e;
+	opacity: 1;
+}

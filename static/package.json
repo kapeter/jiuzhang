@@ -1,0 +1,12 @@
+{
+  "name": "jiuzhang",
+  "version": "1.0.0",
+  "description": "the static page for jiuzhang",
+  "main": "index.js",
+  "author": "kapeter",
+  "license": "MIT",
+  "dependencies": {
+    "swiper": "^3.4.2",
+    "zepto": "^1.2.0"
+  }
+}
