@@ -4,7 +4,7 @@
 }
 html,body{
 	width: 100%;
-	font: 14px/1.5 "Helvetica Neue", "Microsoft Yahei",Helvetica, Arial, sans-serif;
+	font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 	background: #ffffff;
 }
 .full-page{
@@ -13,9 +13,7 @@ html,body{
 }
 .swiper-images {
 	position: relative;
-}
-.swiper-images > img{
-	filter: grayscale(100%);
+	transition: all 30s linear;
 }
 .swiper-pagination-bullet{
 	background: #fff;
@@ -26,4 +24,63 @@ html,body{
 .swiper-pagination-bullet-active{
 	background: #d33e3e;
 	opacity: 1;
+}
+.logo-header{
+	width: 100%;
+	padding: 0 30px;
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	top: 30px;
+	text-align: center;
+	z-index: 100;
+}
+.logo-header > img{
+}
+.project-box{
+	width: 100%;
+	padding: 0 30px;
+	margin-bottom: 36px;
+	box-sizing: border-box;
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+    height: 96px;
+    transition: all 0.35s ease-out;
+}
+.active	{
+	z-index: 9;
+}
+.project-cover{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+	background: linear-gradient(to top,rgba(0,0,0,.75), rgba(255,255,255,0.01));
+	transition: all 0.35s ease-out;
+}
+.project-box > h2 {
+	font-size: 28px;
+	font-weight: normal;
+	margin-bottom: 15px;
+}
+.project-box > h2:before{
+	content: '#';
+	font-size: 28px;
+	margin-right: 5px;
+}
+.project-box > p{
+	line-height: 1.6;
+	font-size: 14px;
+}
+.detail-btn{
+	font-size: 14px;
+	font-style: italic;
+	margin-left: 10px;
+}
+.detail-btn a{
+	color: #f0f0f0;
 }
