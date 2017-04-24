@@ -1,3 +1,27 @@
+/*!
+Theme Name: jiuzhang
+Theme URI: http://www.jiuzhang.com/
+Description: A simple theme for WordPress
+Author: kapeter
+Author URI: http://www.kapeter.com/
+Version: 0.1
+*/
+@font-face {
+	font-family: 'iconfont';
+    src: url('assets/fonts/iconfont.eot'); /* IE9*/
+    src: url('assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('assets/fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('assets/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -6,11 +30,120 @@ html,body{
 	width: 100%;
 	font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 	background: #ffffff;
+	font-size: 14px;
 }
+ul,ol,li{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+
 .full-page{
 	width: 100%;
 	height: 100%;
 }
+.header{
+	display: none;
+	width: 100%;
+	height: 79px;
+	background:#fff;
+	position: relative;
+}
+.brand{
+	position: relative;
+	font-size: 28px;
+	float: left;
+	line-height: 75px;
+	z-index: 1000;
+}
+.header-bars{
+	position: absolute;
+	color: #666;
+	top: 24px;
+	right: 0;
+}
+.search-bars{
+	float: left;
+	margin-top: -8px;
+	overflow: hidden;
+	font-weight: 400;
+}
+.search-box{
+	width: 0;
+	height: 24px;
+	outline: 0;
+    border: 0;
+    border-bottom: 2px solid #666;
+    margin-top: -5px;
+    font-size: 12px;
+	transition: all .35s ease-out;
+}
+.search-bars .iconfont{
+	position: relative;
+	cursor: pointer;
+	font-size: 24px;
+	transition: all .35s ease;
+	z-index: 10;
+	margin-top: 4px;
+	top: 4px;
+}
+.box-active{
+	width: 150px;
+}
+.nav-toggle{
+	margin-left: 15px;
+	float: right;
+	position: relative;
+	z-index: 1000;
+}
+.nav-bars{
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+}
+.nav-bars .bar{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #666;
+    display: inline-block;
+    transition: all .25s;
+    box-sizing: border-box;
+}
+.nav-bars .bar:nth-of-type(1){
+	top: 0;
+}
+.nav-bars .bar:nth-of-type(2){
+	top: 10px;
+}
+.nav-bars .bar:nth-of-type(3){
+	bottom: 0;
+}
+.nav-active .bar:nth-of-type(1){
+    transform: translateY(10px) rotate(-45deg);
+}
+.nav-active .bar:nth-of-type(2){
+    opacity: 0;
+}
+.nav-active .bar:nth-of-type(3){
+    transform: translateY(-10px) rotate(45deg);
+}
+.nav{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	left: 100%;
+	box-sizing: border-box;
+	background: #fff;
+	background-size: cover;
+	z-index: 900;
+	overflow: hidden;
+	transition: all .35s ease-in-out;
+}
+
 .swiper-images {
 	position: relative;
 	transition: all 30s linear;
@@ -22,7 +155,7 @@ html,body{
 	height: 12px;
 }
 .swiper-pagination-bullet-active{
-	background: #d33e3e;
+	background: #fa4646;
 	opacity: 1;
 }
 .logo-header{
@@ -84,3 +217,74 @@ html,body{
 .detail-btn a{
 	color: #f0f0f0;
 }
+
+.footer{
+	display: none;
+	width: 100%;
+	margin-top: 30px;
+}
+.footer-content{
+	width: 100%;
+	text-align: center;
+	padding: 5px 0;
+	border-top: 2px #ededed solid;
+}
+.footer a{
+	color: #bebebe;
+	transition: all 0.35s ease-out;
+	font-size: 14px;
+}
+.footer a:hover{
+	color: #fa4646;
+}
+
+@media screen and (min-width: 1200px) {
+	.container{
+		width: 1200px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.nav-body{
+		padding: 80px 0px;
+	}
+	.project-box{
+		display: none;
+	}
+	.header{
+		display: block;
+	}
+	.footer{
+		display: block;
+	}
+    .swiper-b {
+        width: 1200px;
+        margin: 30px auto;
+        margin-top: -45px;
+    }
+    .swiper-b .swiper-slide {
+        width: 370px;
+        margin-bottom: 30px;
+    }
+    .swiper-b .swiper-slide h2:before{
+		content: '#';
+		font-size: 28px;
+		margin-right: 5px;
+	}
+	.swiper-b .swiper-slide > h2 {
+		font-size: 28px;
+		font-weight: normal;
+		color: #fff;
+		padding-bottom: 9px;
+		margin-bottom: 30px;
+		border-bottom: 4px solid rgba(0,0,0,0);
+		transition: all 0.2s ease-out;
+	}
+	.swiper-b .swiper-slide > p{
+		line-height: 1.5;
+		font-size: 14px;
+	}
+	.swiper-b .swiper-slide-move-active > h2{
+		border-bottom: 4px solid #fa4646;
+	}
+}
+
