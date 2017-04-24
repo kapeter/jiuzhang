@@ -6,6 +6,7 @@
   "author": "kapeter",
   "license": "MIT",
   "dependencies": {
+    "jquery-mousewheel": "^3.1.13",
     "swiper": "^3.4.2",
     "zepto": "^1.2.0"
   }

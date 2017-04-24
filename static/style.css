@@ -57,6 +57,9 @@ a{
 	line-height: 75px;
 	z-index: 1000;
 }
+.brand a{
+	color: #666;
+}
 .header-bars{
 	position: absolute;
 	color: #666;
@@ -217,6 +220,9 @@ a{
 .detail-btn a{
 	color: #f0f0f0;
 }
+.swiper-text-content{
+	display: none;
+}
 
 .footer{
 	display: none;
@@ -256,6 +262,9 @@ a{
 	.footer{
 		display: block;
 	}
+	.swiper-text-content{
+		display: block;
+	}
     .swiper-b {
         width: 1200px;
         margin: 30px auto;
@@ -271,6 +280,7 @@ a{
 		margin-right: 5px;
 	}
 	.swiper-b .swiper-slide > h2 {
+		height: 32px;
 		font-size: 28px;
 		font-weight: normal;
 		color: #fff;
@@ -285,6 +295,32 @@ a{
 	}
 	.swiper-b .swiper-slide-move-active > h2{
 		border-bottom: 4px solid #fa4646;
+		color: #fa4646;
+	}
+	.swiper-container-horizontal>.swiper-scrollbar{
+		left: 0;
+		width: 100%;
+	}
+	.left-mask{
+		opacity: 0;
+		position: absolute;
+		display: block;
+		width: 60px;
+		left: 0;
+		top: 45px;
+		height: 85%;
+		background: linear-gradient(to left, rgba(255,255,255,0) , rgba(240,240,240,1)); 		
+		transition: all 0.2s ease-out;
+	}
+	.right-mask{
+		opacity: 1;
+		position: absolute;
+		display: block;
+		width: 60px;
+		right: 0;
+		top: 45px;
+		height: 85%;
+		background: linear-gradient(to right, rgba(255,255,255,0) , rgba(240,240,240,1)); 
 	}
 }
 
