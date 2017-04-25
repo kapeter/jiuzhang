@@ -28,7 +28,7 @@ Version: 0.1
 }
 html,body{
 	width: 100%;
-	font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+	font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
 	background: #ffffff;
 	font-size: 14px;
 }
@@ -227,13 +227,11 @@ a{
 .footer{
 	display: none;
 	width: 100%;
-	margin-top: 30px;
+	margin-bottom: 30px;
 }
 .footer-content{
 	width: 100%;
 	text-align: center;
-	padding: 5px 0;
-	border-top: 2px #ededed solid;
 }
 .footer a{
 	color: #bebebe;
@@ -301,6 +299,13 @@ a{
 		left: 0;
 		width: 100%;
 	}
+	.swiper-container-horizontal>.swiper-scrollbar{
+		height: 3px;
+		background: rgba(0,0,0,.05);
+	}
+	.swiper-scrollbar-drag{
+		background: rgba(0,0,0,.25);
+	}
 	.left-mask{
 		opacity: 0;
 		position: absolute;
@@ -308,7 +313,7 @@ a{
 		width: 60px;
 		left: 0;
 		top: 45px;
-		height: 85%;
+		height: 83%;
 		background: linear-gradient(to left, rgba(255,255,255,0) , rgba(240,240,240,1)); 		
 		transition: all 0.2s ease-out;
 	}
@@ -319,7 +324,7 @@ a{
 		width: 60px;
 		right: 0;
 		top: 45px;
-		height: 85%;
+		height: 83%;
 		background: linear-gradient(to right, rgba(255,255,255,0) , rgba(240,240,240,1)); 
 	}
 }
