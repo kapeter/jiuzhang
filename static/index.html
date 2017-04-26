@@ -9,25 +9,25 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="full-page" id="page">
-		<header class="header">
-			<div class="container">
-				<h1 class="brand"><a href="#">KAPETER</a></h1>
-				<div class="header-bars">
-					<div class="search-bars">
-						<input id='search-box'  class="search-box" type="text" name="search" placeholder="Search…">
-						<i id='search-btn' class="iconfont">&#xe600;</i>
-					</div>
-					<div class="nav-toggle">
-						<div class="nav-bars">
-							<span class="bar"></span>
-							<span class="bar"></span>
-							<span class="bar"></span>
-						</div>					
-					</div>
+	<header class="header">
+		<div class="container">
+			<h1 class="brand"><a href="#">KAPETER</a></h1>
+			<div class="header-bars">
+				<div class="search-bars">
+					<input id='search-box'  class="search-box" type="text" name="search" placeholder="Search…">
+					<i id='search-btn' class="iconfont">&#xe600;</i>
+				</div>
+				<div class="nav-toggle">
+					<div class="nav-bars">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</div>					
 				</div>
 			</div>
-		</header>
+		</div>
+	</header>
+	<div class="full-page" id="page">
 		<div class="swiper-container swiper-a">
 		    <div class="swiper-wrapper">
 		        <div class="swiper-slide">
@@ -109,15 +109,14 @@
 			    <div class="swiper-scrollbar"></div>
 			</div>
 		</div>
-
-		<footer class="footer">
-			<div class="container">
-				<div class="footer-content">
-					<p><a href="#">浙ICP备17012273</a></p>
-				</div>
-			</div>
-		</footer>
 	</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<p><a href="#">浙ICP备17012273</a></p>
+			</div>
+		</div>
+	</footer>
 	<nav class="nav">
 		<div class="frosted-glass"></div>
 		<div class="container">
@@ -145,9 +144,11 @@
 			if ($('.nav-toggle').find('.nav-active').length != 0){
 				$('.nav-bars').removeClass('nav-active');
 				$('.nav').css('left','100%');
+				$('.full-page').removeClass('page-blur');
 			}else{
 				$('.nav-bars').addClass('nav-active');
 				$('.nav').css('left','0%');
+				$('.full-page').addClass('page-blur');
 			}
 		});
 
