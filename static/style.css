@@ -28,7 +28,7 @@ Version: 0.1
 }
 html,body{
 	width: 100%;
-	font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+	font-family:"Segoe UI",Helvetica,Arial,"Microsoft Jhenghei","Hiragino Sans GB","WenQuanYi Zen Hei","Microsoft Yahei",STHeiti,SimHei,"WenQuanYi Micro Hei",sans-serif;
 	background: #ffffff;
 	font-size: 14px;
 }
@@ -163,7 +163,7 @@ a{
 	background: #fa4646;
 	opacity: 1;
 }
-.logo-header{
+.header-logo{
 	width: 100%;
 	padding: 0 30px;
 	box-sizing: border-box;
@@ -173,7 +173,8 @@ a{
 	text-align: center;
 	z-index: 100;
 }
-.logo-header > img{
+.header-logo > img{
+	width: 100%;
 }
 .project-box{
 	width: 100%;
@@ -253,7 +254,7 @@ a{
 	.nav-body{
 		padding: 80px 0px;
 	}
-	.project-box{
+	.project-box,.project-cover{
 		display: none;
 	}
 	.header{
@@ -271,7 +272,7 @@ a{
         margin-top: -45px;
     }
     .swiper-b .swiper-slide {
-        width: 370px;
+        width: 300px;
         margin-bottom: 30px;
     }
     .swiper-b .swiper-slide h2:before{
@@ -285,7 +286,7 @@ a{
 		font-weight: normal;
 		color: #fff;
 		padding-bottom: 9px;
-		margin-bottom: 30px;
+		margin-bottom: 15px;
 		border-bottom: 4px solid rgba(0,0,0,0);
 		transition: all 0.2s ease-out;
 	}
@@ -328,6 +329,10 @@ a{
 		top: 45px;
 		height: 83%;
 		background: linear-gradient(to right, rgba(255,255,255,0) , rgba(240,240,240,1)); 
+	}
+	.header-logo{
+		top: 0;
+		padding: 0;
 	}
 }
 
