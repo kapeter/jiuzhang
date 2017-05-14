@@ -13,10 +13,6 @@
 		<div class="container">
 			<h1 class="brand"><a href="#">JIUZHANG</a></h1>
 			<div class="header-bars">
-				<div class="search-bars">
-					<input id='search-box'  class="search-box" type="text" name="search" placeholder="Search…">
-					<i id='search-btn' class="iconfont">&#xe600;</i>
-				</div>
 				<div class="nav-toggle">
 					<div class="nav-bars">
 						<span class="bar"></span>
@@ -24,13 +20,17 @@
 						<span class="bar"></span>
 					</div>					
 				</div>
+				<div class="search-bars">
+					<input id='search-box'  class="search-box" type="text" name="search" placeholder="Search…">
+					<i id='search-btn' class="iconfont">&#xe600;</i>
+				</div>
 			</div>
 		</div>
 	</header>
 	<div class="full-page" id="page">
 		<div class="container">
 			<div class="header-logo">
-				<img src="assets/images/header.png">
+				<iframe src="assets/images/logo.svg" id="logo-text" width="100%"></iframe>
 			</div>
 		</div>
 		<div class="swiper-container swiper-a">
@@ -126,7 +126,20 @@
 		<div class="frosted-glass"></div>
 		<div class="container">
 			<div class="nav-body">
-				<p>导航栏内容，后期填充</p>
+				<ul class="nav-first">
+					<li class="about-li"><a href="#">About Us</a></li>
+					<li>
+						<a href="#">Wrighting</a>
+						<ul class="nav-second">
+							<li><a href="#">归乡小记-2017</a></li>
+							<li><a href="#">使徒行记</a></li>
+							<li><a href="#">徽祠记</a></li>
+						</ul>
+					</li>
+					<li><a href="#">LightOffice</a></li>
+					<li><a href="#">LightOffice</a></li>
+					<li><a href="#">One Village</a></li>
+				</ul>
 			</div>
 		</div>
 	</nav>
@@ -150,10 +163,12 @@
 				$('.nav-bars').removeClass('nav-active');
 				$('.nav').css('left','100%');
 				$('.full-page').removeClass('page-blur');
+				//$("body").eq(0).removeClass('no-srcoll');
 			}else{
 				$('.nav-bars').addClass('nav-active');
 				$('.nav').css('left','0%');
 				$('.full-page').addClass('page-blur');
+				//$("body").eq(0).addClass('no-srcoll');
 			}
 		});
 
@@ -237,7 +252,6 @@
 			});
 		}
 	});
-
    	function openBox(target) {
 		var boxH = target.find('p').height() + 64;
 		target.height(boxH);
