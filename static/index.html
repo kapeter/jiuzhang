@@ -147,32 +147,18 @@
 <script type="text/javascript" src="assets/js/zepto.min.js"></script>
 <script type="text/javascript" src="assets/js/swiper.jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/touch.js"></script>
+<script type="text/javascript" src="assets/js/common.js"></script>
 <script type="text/javascript">
 	$(function () {
 
-		$('#search-btn').on('click',function(){
-			if ($('.search-bars').find('.box-active').length != 0){
-				$('.search-box').removeClass('box-active');
-			}else{
-				$('.search-box').addClass('box-active');
-			}
-		});
-
-		$('.nav-bars').on('click',function(){
-			if ($('.nav-toggle').find('.nav-active').length != 0){
-				$('.nav-bars').removeClass('nav-active');
-				$('.nav').css('left','100%');
-				$('.full-page').removeClass('page-blur');
-				//$("body").eq(0).removeClass('no-srcoll');
-			}else{
-				$('.nav-bars').addClass('nav-active');
-				$('.nav').css('left','0%');
-				$('.full-page').addClass('page-blur');
-				//$("body").eq(0).addClass('no-srcoll');
-			}
-		});
-
 		var winW = $(window).width();
+
+		var os = getAgent();
+
+		if (!os.isPc){
+			$('.header').css('display','none');
+			$('.footer').css('display','none');
+		}
 
 		if (winW < 1200){
 		   	var mySwiper = new Swiper ('.swiper-a', {
