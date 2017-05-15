@@ -2,6 +2,7 @@ $(function () {
 	$('#search-btn').on('click',function(){
 		if ($('.search-bars').find('.box-active').length != 0){
 			$('.search-box').removeClass('box-active');
+			console.log('dadsa');
 		}else{
 			$('.search-box').addClass('box-active');
 		}
@@ -20,6 +21,9 @@ $(function () {
 			//$("body").eq(0).addClass('no-srcoll');
 		}
 	});
+	$(window).resize(function(){
+		window.location.reload();
+    });   
 
 })
 
@@ -32,7 +36,7 @@ function getAgent() {
      isChrome = /(?:Chrome|CriOS)/.test(ua),  
      isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),  
      isPhone = /(?:iPhone)/.test(ua) && !isTablet,  
-     isPc = !isPhone && !isAndroid && !isSymbian;  
+     isPc = !isPhone && !isAndroid && !isSymbian && !isTablet;  
      return {  
           isTablet: isTablet,  
           isPhone: isPhone,  

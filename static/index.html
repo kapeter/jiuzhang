@@ -153,14 +153,11 @@
 
 		var winW = $(window).width();
 
-		var os = getAgent();
+		if (winW < 1200){
 
-		if (!os.isPc){
 			$('.header').css('display','none');
 			$('.footer').css('display','none');
-		}
 
-		if (winW < 1200){
 		   	var mySwiper = new Swiper ('.swiper-a', {
 			    loop: true,
 			    // 如果需要分页器
@@ -199,6 +196,9 @@
 		   		}
 		   	})
 		}else{
+			$('.header').css('display','block');
+			$('.footer').css('display','block');
+
 		   	var mySwiperA = new Swiper ('.swiper-a',{
 		   		effect : 'fade',
 				autoplay:5000,
