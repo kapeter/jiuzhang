@@ -44,6 +44,9 @@ a{
 	transition: all .25s ease-out;
 	-webkit-transition: all .25s ease-out;
 }
+a:hover, a:active{
+	color: #fa4646;
+}
 .clearfix:after{
 	content: '.';
 	display: block;
@@ -67,7 +70,6 @@ a{
 	position: relative;
 	z-index: 1000;
 	box-sizing: border-box;
-	border-bottom: 1px solid #ccc;
 }
 .brand{
 	position: relative;
@@ -128,6 +130,8 @@ a{
 .nav-bars{
     width: 28px;
     height: 22px;
+    font-size: 0;
+    line-height: 0;
     cursor: pointer;
 }
 .nav-bars .bar{
@@ -186,7 +190,7 @@ a{
 	margin-bottom: 15px;
 }
 .nav-first > li > a {
-	font-size: 28px;
+	font-size: 24px;
 }
 .nav-first a:before {
 	content: '#';
@@ -214,7 +218,7 @@ a{
 	margin-bottom: 10px;
 }
 .nav-second > li > a{
-	font-size: 16px;
+	font-size: 14px;
 }
 .nav-second > li > a:after{
 	content: '#';
@@ -408,6 +412,9 @@ a{
 	font-weight: normal;
 
 }
+.swiper-list-content .swiper-scrollbar{
+	display: none;
+}
 @media screen and (min-width: 1200px) {
 	.header{
 		height: 80px;
@@ -448,10 +455,16 @@ a{
 		margin: 0 auto;
 		position: relative;
 	}
+	.nav-first > li > a{
+		font-size: 28px;
+	}
 	.nav-second > li {
 		float: left;
 		margin-right: 30px;
 		margin-bottom: 0;
+	}
+	.nav-second > li > a{
+		font-size: 16px;
 	}
 	.nav-body{
 		padding: 80px 0px;
@@ -477,7 +490,7 @@ a{
         width: 300px;
         margin-bottom: 30px;
     }
-    .swiper-b .swiper-slide h2:before{
+    .swiper-b .swiper-slide h2 >a:before{
 		content: '#';
 		font-size: 28px;
 		margin-right: 5px;
@@ -486,11 +499,16 @@ a{
 		height: 32px;
 		font-size: 28px;
 		font-weight: normal;
-		color: #fff;
 		padding-bottom: 9px;
 		margin-bottom: 15px;
 		border-bottom: 4px solid rgba(0,0,0,0);
 		transition: all 0.2s ease-out;
+	}
+	.swiper-b .swiper-slide > h2 > a{
+		color: #fff;
+	}
+	.swiper-b .swiper-slide > h2 > a:hover{
+		color: #fa4646
 	}
 	.swiper-b .swiper-slide > p{
 		line-height: 1.5;
@@ -498,7 +516,6 @@ a{
 	}
 	.swiper-b .swiper-slide-move-active > h2{
 		border-bottom: 4px solid #fa4646;
-		color: #fa4646;
 	}
 	.swiper-container-horizontal>.swiper-scrollbar{
 		left: 0;
@@ -535,6 +552,53 @@ a{
 	.header-logo{
 		top: 0;
 		padding: 0;
+	}
+	.list-content {
+		padding: 0;
+		padding-bottom: 60px;
+	}
+	.list-left{
+		width: 300px;
+		margin-right: 60px;
+		float: left;
+		height: 300px;
+	}
+	.list-right{
+		width: 840px;
+		margin: 0;
+	}
+	.list-left > p {
+		display: block;
+		margin-bottom: 15px;
+	}
+	.swiper-list {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	.header-bars{
+		right: 0;
+	}
+	.swiper-list-content .swiper-slide{
+		width: 320px;
+		padding: 0 30px 30px;
+		position: relative;
+	}
+	.swiper-list-content .swiper-slide:after{
+		content: '';
+		display: block;
+		width: 1px;
+		height: 85%;
+		background-color: #e1e1e1;
+		position: absolute;
+		right: 0;
+		top: 94px;
+	}
+	.swiper-list-content .swiper-slide:last-child:after{
+		width: 0;
+	}
+	
+	.swiper-list-content .swiper-scrollbar{
+		display: block;
 	}
 }
 

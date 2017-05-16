@@ -28,7 +28,7 @@
 		</div>
 	</header>
 	<div class="container">
-		<div class="list-content clearfix">
+		<div class="list-content clearfix full-page">
 			<div class="list-left">
 				<h1>Wrighting</h1>
 				<p>Without you?I'd be a soul without a purpose. Without you?I'd be an emotion without a heart I'm a face without expression,A heart with no beat. Without you by my side,I'm just a flame without the</p>
@@ -166,8 +166,9 @@
 		        					<p>我曾经发誓要永远和他在一起，能够如此发誓，让我无比幸福。我曾经以为自己喜欢这个人，能有如此感受，让我无比幸福。他曾经对我说:我一定会让你幸福。能听到他那样说，让我无比幸福。那个人，分了这么多的幸福给我，所以，我敢肯定...现在的我...不管别人怎么说，都一定是世界上最幸福的女孩。</p>
 		        				</li>
 		        			</ul>
-				        </div>
+				        </div>    
 				    </div>
+				    <div class="swiper-scrollbar"></div>
 				</div>			
 			</div>
 		</div>
@@ -209,27 +210,53 @@
 	$(function () {
 		var winW = $(window).width();
 
-	   	var mySwiperA = new Swiper ('.swiper-a', {
-		    loop: true,
-		    // 如果需要分页器
-		    pagination: '.swiper-pagination',
-		    // 如果需要前进后退按钮
-		    nextButton: '.swiper-button-next',
-		    prevButton: '.swiper-button-prev',
-		}); 
 		$('.swiper-images').css({
 			'width': '100%',
 			'height': '300px'
 		});
-
 		if (winW < 1200){
+		   	var mySwiperA = new Swiper ('.swiper-a', {
+			    loop: true,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    // 如果需要前进后退按钮
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			}); 
 			var mySwiperB = new Swiper ('.swiper-list-content', {
 			    loop: true,
 			});
 			mySwiperA.params.control = mySwiperB;
+			mySwiperB.params.control = mySwiperA;
 
 		}else{
+		   	var mySwiperA = new Swiper ('.swiper-a', {
+			    loop: true,
+			    autoplay:5000,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    // 如果需要前进后退按钮
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			}); 
+			var mySwiperB = new Swiper ('.swiper-list-content', {
+		        scrollbar: '.swiper-scrollbar',
+		        slidesPerView: 'auto',
+		        freeMode : true,
+		        spaceBetween: 0,
+		        mousewheelControl : true,
+		        grabCursor: true,
+			});
 
+			$('.swiper-list-content').find('.swiper-slide').each(function (index) {
+				$(this).on('mouseover',function () {
+					$(this).addClass('swiper-slide-move-active');
+					mySwiperA.slideTo(index, 1000, false);
+				});
+				$(this).on('mouseout',function () {
+					$(this).removeClass('swiper-slide-move-active');
+				});
+			});
 		}
 	});
 	</script>
