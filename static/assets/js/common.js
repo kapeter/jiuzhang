@@ -2,7 +2,6 @@ $(function () {
 	$('#search-btn').on('click',function(){
 		if ($('.search-box').hasClass('box-active')){
 			$('.search-box').removeClass('box-active');
-			console.log('dadsa');
 		}else{
 			$('.search-box').addClass('box-active');
 		}
@@ -13,17 +12,18 @@ $(function () {
 			$('.nav-bars').removeClass('nav-active');
 			$('.full-page').removeClass('page-blur');
 			$('.nav').css('left','100%');
+			document.removeEventListener('touchmove',changeMove);
 		}else{
 			$('.nav-bars').addClass('nav-active');
 			$('.full-page').addClass('page-blur');
 			$('.nav').css('left','0%');
-			
+			document.addEventListener('touchmove',changeMove);
 		}
 	});
-	$(window).resize(function(){
-		window.location.reload();
-    });   
 
+	function changeMove(event){
+		event.preventDefault();
+	}
 })
 
 function getAgent() {  
@@ -43,3 +43,4 @@ function getAgent() {
           isPc : isPc  
      };  
 }  
+
