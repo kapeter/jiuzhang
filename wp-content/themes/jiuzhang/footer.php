@@ -8,6 +8,7 @@
 			</div>
 		</div>
 	</footer>
+	<?php wp_footer(); ?>
 </body>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/zepto.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/swiper.jquery.min.js"></script>

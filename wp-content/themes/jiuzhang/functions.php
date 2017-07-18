@@ -104,13 +104,6 @@ function remove_width_attribute( $html ) {
 }
 
 
-/**
- * Custom template tags for this theme.
- *
- * @since Twenty Fifteen 1.0
- */
-require get_template_directory() . '/inc/template-tags.php';
-
 
 /* 页面面包屑 */
 function single_breadcrumbs() {
@@ -121,5 +114,7 @@ function single_breadcrumbs() {
 	echo '<li><a href="'. get_category_link($parent->cat_ID). '#' . $category->slug .'">'.$category->name.'</a></li>';
 	echo '</ul>';
 }
+
+
 
 ?>

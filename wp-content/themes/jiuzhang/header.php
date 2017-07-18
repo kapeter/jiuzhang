@@ -14,6 +14,8 @@
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/assets/css/swiper.min.css" />
 
+<?php wp_head(); ?>
+
 </head>
 
 <body>
