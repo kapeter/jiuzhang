@@ -70,7 +70,6 @@
                   <div class="padding-30">
                     <div class="list-project-info clearfix">
                       <p><?=$value->description ?></p>
-                      <a href="#" class="enter-btn"><i class="iconfont">&#xe615;</i></a>
                     </div>
                     <ul class="list-article-box">
                       <?php $posts = get_posts( "numberposts=-1&category=".$value->term_id ); ?>  
