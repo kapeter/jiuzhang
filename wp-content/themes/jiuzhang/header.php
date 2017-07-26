@@ -32,7 +32,7 @@
 				</div>
 				<div class="search-bars">
 					<input id="search-box" class="search-box" type="text" name="s" placeholder="搜索关键词……" value="">
-					<i id='search-btn' class="iconfont">&#xe672;</i>
+					<i id='search-btn' class="iconfont">&#xe63a;</i>
 				</div>
 			</div>
 		</div>

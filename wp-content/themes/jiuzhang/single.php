@@ -20,7 +20,7 @@
 	    	<div class="article-info">
 	    		<p><?=get_post_meta($post->ID, 'writer', true) ?></p>
 				<p><?php the_time('Y.m.d') ?></p>
-
+				<p><a href="javascript:;"><i class="iconfont">&#xe616;</i></a></p>
 	        </div>
 	    	
 			<div class="article-content">
