@@ -508,7 +508,7 @@ a:hover{
 	margin-top: 30px;
 	font-size: 14px;
 	color: #bebebe;
-	text-align: justify;
+	text-align: center;
 }
 .search-container{
 	min-height: 450px;
@@ -553,6 +553,82 @@ a:hover{
 .result-info a:hover{
 	text-decoration: underline;
 }
+
+.modal{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    overflow: auto;
+    margin: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 3000;
+    display: none;
+    opacity: 0;
+    transition: all .25s ease-out;
+}
+.modal-active{
+	opacity: 1;
+	display: block;
+}
+.modal-body{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	width: 85%;
+	padding: 15px;
+	margin: 0 auto;
+	background: #fff;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.75);
+}
+.modal-header .modal-title{
+	color: #333;
+	float: left;
+}
+.modal-button{
+	float: right;
+}
+.modal-close{
+	display: inline-block;
+	line-height: 18px;
+	font-size: 18px;
+	color: #999;
+	cursor: pointer;
+	transition: all 0.35s ease-out;
+} 
+.modal-content{
+	padding: 15px 0px;
+}
+.share-box{
+	width: 33.33333%;
+	float: left;
+	text-align: center;
+}
+.share-box a{
+	display: inline-block;
+	font-size: 54px;
+	color: #999;
+	transition: all 0.25s ease-out;
+}
+.share-box .facebook:hover{
+	color: rgb(24,142,238);
+}
+.share-box .sina:hover{
+	color: rgb(239,83,80);
+}
+.share-box .douban:hover{
+	color: rgb(98,206,118);
+}
+.qrcode{
+	padding: 5px;
+	border: 1px solid #eee;
+	width:100px; 
+	height:100px; 
+	margin: 15px auto;
+}
 @media screen and (min-width: 640px) { 
 	.article{
 		width: 640px;
@@ -580,6 +656,9 @@ a:hover{
 	}
 	.search-box{
 		width: 450px;
+	}
+	.modal-body{
+		width: 320px;
 	}
 }
 
