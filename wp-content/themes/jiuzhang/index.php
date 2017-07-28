@@ -32,15 +32,19 @@
 				    	<?php foreach ($categories as $value) :  ?>
 				    		<?php if ($value->category_parent == 0) : ?>
 					        <div class="swiper-slide">
-			        			<h2><a href="<?=get_category_link( $value->term_id ); ?>"><?=$value->name ?></a></h2>
-			        			<p><?=$value->description ?></p>
+					        	<a href="<?=get_category_link( $value->term_id ); ?>" class="swiper-link">
+			        				<h2><?=$value->name ?></h2>
+			        				<p><?=$value->description ?></p>
+			        			</a>
 					        </div>
 							<?php endif;?>
 				    	<?php endforeach; ?>
 				    		<!-- 关于我们文字 -->
 				    		<div class="swiper-slide">
-			        			<h2><a href="/about">关于九樟</a></h2>
+				    			<a href="/about" class="swiper-link">
+			        			<h2>关于九樟</h2>
 			        			<p>九樟学社是一个致力于中国乡土文化现代重塑的社会组织。</p>
+			        			</a>
 					        </div>
 					        <!-- END 关于我们文字 -->
 				    </div>

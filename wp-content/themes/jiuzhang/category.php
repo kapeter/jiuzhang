@@ -1,101 +1,105 @@
 <?php get_header(); ?>
 
-  <div class="container">
-    <div class="list-content clearfix full-page">
-      <div class="list-left">
-        <div class="list-header">
-          <?php 
-            if(is_category()) { 
-              $catName = get_query_var('cat');
-              $thisCat = get_category($catName);  //当前分类
-              $categories = get_categories(['hide_empty' => 0, 'exclude' => '1']);   //所有分类
-              $chlidNum = 0;
-            } 
+<div class="container">
+  <div class="list-content clearfix full-page">
+    <div class="list-left">
+      <div class="list-header">
+        <?php 
+          if(is_category()) { 
+            $catName = get_query_var('cat');
+            $thisCat = get_category($catName);  //当前分类
+            $categories = get_categories(['hide_empty' => 0, 'exclude' => '1']);   //所有分类
+            $chlidNum = 0;
+          } 
 
-          ?>  
-          <h1><?=$thisCat->name ?></h1>
-          <p><?=$thisCat->description ?></p>
-        </div>
-        <ul class="series-list">
+        ?>  
+        <h1><?=$thisCat->name ?></h1>
+        <p><?=$thisCat->description ?></p>
+      </div>
+      <ul class="series-list">
+          <?php foreach ($categories as $value) :  ?>
+            <?php if ($value->category_parent == $thisCat->term_id) : ?>
+              <?php $chlidNum++; ?>
+              <li class="<?=$value->slug ?>"><a href="javascript:;"><?=$value->name ?></a></li>
+            <?php endif; ?>
+
+          <?php endforeach; ?>
+          <?php if ($chlidNum == 0) : ?>
+            <li>暂无系列</li>
+          <?php endif; ?>
+      </ul> 
+      <ul class="list-ul">
+          <?php foreach ($categories as $value) :  ?>
+            <?php if ($value->category_parent == 0 && $value->term_id != $thisCat->term_id) : ?>
+              <li><a href="<?=get_category_link( $value->term_id); ?>"><?=$value->name ?></a></li>
+            <?php endif; ?>
+
+          <?php endforeach; ?>
+      </ul>
+
+    </div>
+    <div class="list-right">
+      <?php if ($chlidNum != 0) : ?>
+      <div class="swiper-container swiper-a swiper-list">
+          <div class="swiper-wrapper">
             <?php foreach ($categories as $value) :  ?>
               <?php if ($value->category_parent == $thisCat->term_id) : ?>
-                <?php $chlidNum++; ?>
-                <li class="<?=$value->slug ?>"><a href="javascript:;"><?=$value->name ?></a></li>
+              <div class="swiper-slide">
+                <div class="swiper-images swiper-lazy" data-background="<?=z_taxonomy_image_url($value->term_id); ?>"></div>
+              </div>
               <?php endif; ?>
 
             <?php endforeach; ?>
-            <?php if ($chlidNum == 0) : ?>
-              <li>暂无系列</li>
-            <?php endif; ?>
-        </ul> 
-        <ul class="list-ul">
+            
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev swiper-button-white"></div>
+          <div class="swiper-button-next swiper-button-white"></div>
+      </div>
+      <?php else : ?>
+          <p>该项目即将上线，尽情期待。</p>
+      <?php endif; ?>
+
+      <div class="swiper-container swiper-list-content">
+          <div class="swiper-wrapper">
             <?php foreach ($categories as $value) :  ?>
-              <?php if ($value->category_parent == 0 && $value->term_id != $thisCat->term_id) : ?>
-                <li><a href="<?=get_category_link( $value->term_id); ?>"><?=$value->name ?></a></li>
+              <?php if ($value->category_parent == $thisCat->term_id) : ?>
+              <div class="swiper-slide" data-id="<?=$value->slug ?>">
+                <h2><?=$value->name ?></h2>
+                <div class="padding-30">
+                  <div class="list-project-info clearfix">
+                    <p><?=$value->description ?></p>
+                  </div>
+                  <ul class="list-article-box">
+                    <?php $posts = get_posts( "numberposts=-1&category=".$value->term_id ); ?>  
+                    <?php if( $posts ) : ?>  
+                      <?php foreach( $posts as $post ) : setup_postdata( $post ); ?>  
+                      <li>  
+                        <h3><a href="<?=the_permalink() ?>" title="<?=the_title() ?>"><?=the_title() ?></a></h3>
+                        <span><?=the_time('Y.m.d') ?>&nbsp;&nbsp;&nbsp;&nbsp;<?=get_post_meta($post->ID, 'writer', true) ?></span>
+                        <p><?=mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 250,"..."); ?></p>
+                      </li>  
+                      <?php endforeach; ?>
+                      <?php else : ?>
+                      <li>该系列暂无文章，我们将尽快添加内容。</li>  
+                    <?php endif; ?>
+                  </ul>
+                </div>
+              </div>
               <?php endif; ?>
 
-            <?php endforeach; ?>
-        </ul>
-
-      </div>
-      <div class="list-right">
-        <?php if ($chlidNum != 0) : ?>
-        <div class="swiper-container swiper-a swiper-list">
-            <div class="swiper-wrapper">
-              <?php foreach ($categories as $value) :  ?>
-                <?php if ($value->category_parent == $thisCat->term_id) : ?>
-                <div class="swiper-slide">
-                  <div class="swiper-images swiper-lazy" data-background="<?=z_taxonomy_image_url($value->term_id); ?>"></div>
-                </div>
-                <?php endif; ?>
-
-              <?php endforeach; ?>
-              
-            </div>
-            <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev swiper-button-white"></div>
-            <div class="swiper-button-next swiper-button-white"></div>
-        </div>
-        <?php else : ?>
-            <p>该项目即将上线，尽情期待。</p>
-        <?php endif; ?>
-
-        <div class="swiper-container swiper-list-content">
-            <div class="swiper-wrapper">
-              <?php foreach ($categories as $value) :  ?>
-                <?php if ($value->category_parent == $thisCat->term_id) : ?>
-                <div class="swiper-slide" data-id="<?=$value->slug ?>">
-                  <h2><?=$value->name ?></h2>
-                  <div class="padding-30">
-                    <div class="list-project-info clearfix">
-                      <p><?=$value->description ?></p>
-                    </div>
-                    <ul class="list-article-box">
-                      <?php $posts = get_posts( "numberposts=-1&category=".$value->term_id ); ?>  
-                      <?php if( $posts ) : ?>  
-                        <?php foreach( $posts as $post ) : setup_postdata( $post ); ?>  
-                        <li>  
-                          <h3><a href="<?=the_permalink() ?>" title="<?=the_title() ?>"><?=the_title() ?></a></h3>
-                          <span><?=the_time('Y.m.d') ?>&nbsp;&nbsp;&nbsp;&nbsp;<?=get_post_meta($post->ID, 'writer', true) ?></span>
-                          <p><?=mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 250,"..."); ?></p>
-                        </li>  
-                        <?php endforeach; ?>
-                        <?php else : ?>
-                        <li>该系列暂无文章，我们将尽快添加内容。</li>  
-                      <?php endif; ?>
-                    </ul>
-                  </div>
-                </div>
-                <?php endif; ?>
-
-              <?php endforeach; ?>  
-            </div>
-        </div>      
-      </div>
+            <?php endforeach; ?>  
+          </div>
+      </div>      
     </div>
   </div>
-
+</div>
+<ul class="sidebar">
+  <li>
+    <a href="javascript:;" id="go-top"><i class="iconfont">&#xe664;</i></a>
+  </li>
+</ul>
 <?php get_footer(); ?>
 
 <script type="text/javascript">

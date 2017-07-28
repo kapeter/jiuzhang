@@ -22,7 +22,6 @@
 	    	<div class="article-info">
 	    		<p><?=get_post_meta($post->ID, 'writer', true) ?></p>
 				<p><?php the_time('Y.m.d') ?></p>
-				<p><a href="javascript:;" id="share-btn"><i class="iconfont">&#xe616;</i></a></p>
 	        </div>
 	    	
 			<div class="article-content">
@@ -45,6 +44,15 @@
 
 </div>
 
+<ul class="sidebar">
+	<li>
+		<a href="javascript:;" id="share-btn"><i class="iconfont">&#xe60f;</i></a>
+	</li>
+	<li>
+		<a href="javascript:;" id="go-top"><i class="iconfont">&#xe664;</i></a>
+	</li>
+</ul>
+<!-- 模态框 -->
 <div class="modal">
 	<div class="modal-body">
 		<div class="modal-header clearfix">
@@ -75,9 +83,9 @@
 </div>
 
 <?php get_footer(); ?>
+
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/qrcode.min.js"></script>
 <script type="text/javascript">
-
 	$(function () {
 		$('#share-btn').on('click',function () {
 			<?php if (!empty($link)) : ?>

@@ -254,6 +254,12 @@ a:hover{
 	width: 12px;
 	height: 12px;
 }
+.swiper-b {
+	line-height: 1.5;
+	margin-top: -62px;
+	color: #818181;
+	text-align:justify
+}
 .swiper-b .swiper-scrollbar{
 	display: none;
 }
@@ -261,12 +267,10 @@ a:hover{
     padding: 0 30px 15px;
     box-sizing: border-box;
 }
-.swiper-b {
-	line-height: 1.5;
-	margin-top: -62px;
+.swiper-b .swiper-link{
 	color: #818181;
-	text-align:justify
 }
+
 .swiper-pagination-bullet-active{
 	background: #fa4646 !important;
 	opacity: 1;
@@ -274,13 +278,10 @@ a:hover{
 .swiper-b h2{
 	margin-bottom: 30px;
 }
-.swiper-b h2 > a {
+.swiper-b h2 {
 	color: #fff;	
 	font-size: 32px;
 	font-weight: normal;
-}
-.swiper-b h2 > a:hover{
-	color: #fa4646;
 }
 
 .header-logo{
@@ -629,6 +630,31 @@ a:hover{
 	height:100px; 
 	margin: 15px auto;
 }
+
+.sidebar{
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	z-index: 10;
+}
+.sidebar li{
+	margin-bottom: 10px;
+}
+.sidebar li a{
+	display: block;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	background: #e1e1e1;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+}
+.sidebar li a:hover{
+	background: #fa4646;
+}
+
 @media screen and (min-width: 640px) { 
 	.article{
 		width: 640px;
@@ -740,7 +766,7 @@ a:hover{
         padding: 0;
         margin-bottom: 30px;
     }
-	.swiper-b .swiper-slide > h2 {
+	.swiper-b .swiper-slide h2 {
 		height: 56px;
 		text-align: left;
 		font-weight: normal;
@@ -755,17 +781,14 @@ a:hover{
 		border-bottom: 4px solid rgba(0,0,0,0);
 		transition: all 0.2s ease-out;		
 	} 
-	.swiper-b .swiper-slide > h2 > a{
+	.swiper-b .swiper-slide > h2{
 		color: #fff;
-	}
-	.swiper-b .swiper-slide > h2 > a:hover{
-		color: #fa4646
 	}
 	.swiper-b .swiper-slide > p{
 		line-height: 1.5;
 		font-size: 14px;
 	}
-	.swiper-b .swiper-slide-move-active > h2, .swiper-list-content .swiper-slide-move-active > h2{
+	.swiper-b .swiper-slide-move-active h2, .swiper-list-content .swiper-slide-move-active > h2{
 		border-bottom: 4px solid #fa4646;
 	}
 	.swiper-container-horizontal>.swiper-scrollbar{
@@ -898,5 +921,8 @@ a:hover{
 	}
 	.result-box p{
 		font-size: 14px;
+	}
+	.sidebar{
+		right: 30px;
 	}
 }

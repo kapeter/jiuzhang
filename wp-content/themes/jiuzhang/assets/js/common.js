@@ -35,6 +35,40 @@ $(function () {
 	function changeMove(event){
 		event.preventDefault();
 	}
+
+    //回到顶部效果
+    var timer=null;
+    var isHeight = document.documentElement.clientHeight;
+    var isTop =true;
+    $('#go-top').parent().css('display','none');
+
+    window.onscroll =function(){
+        var oTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (!isTop){
+            clearInterval(timer);
+        }
+        $(document).on('mousewheel', function () {
+            clearInterval(timer);
+        });  
+        isTop =false;
+        if (oTop > isHeight / 2){
+            $('#go-top').parent().css('display','block');
+        }else{
+            $('#go-top').parent().css('display','none');
+        }
+    }
+    
+    $('#go-top').click(function(){
+        timer = setInterval(function(){
+             var oTop = document.documentElement.scrollTop || document.body.scrollTop;
+             var oSpeed = Math.floor(oTop/5);
+             document.documentElement.scrollTop = document.body.scrollTop = oTop-oSpeed;
+             isTop =true;
+             if(oTop == 0){
+                 clearInterval(timer);
+             }
+        },30);
+    }); 
 })
 
 function getAgent() {  
@@ -59,4 +93,7 @@ $('.nav-second').find('a').each(function(){
 	$(this).on('click',function(){
 		window.location.reload();
 	});
-})
+});
+
+
+

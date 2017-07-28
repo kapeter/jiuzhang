@@ -22,5 +22,9 @@
 	</div>
 
 </div>
-
+<ul class="sidebar">
+  <li>
+    <a href="javascript:;" id="go-top"><i class="iconfont">&#xe664;</i></a>
+  </li>
+</ul>
 <?php get_footer(); ?>
