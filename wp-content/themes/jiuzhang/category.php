@@ -114,6 +114,7 @@
     $('.swiper-images').css({'height':'300px'});
     
     var mySwiperA = new Swiper ('.swiper-a', {
+        freeMode : false,
         // 如果需要分页器
         pagination: '.swiper-pagination',
         // 如果需要前进后退按钮
@@ -123,8 +124,8 @@
         lazyLoadingOnTransitionStart : true,
     }); 
     var mySwiperB = new Swiper ('.swiper-list-content', {
+        freeMode : false,
         autoHeight: true,
-        roundLengths : true, 
         onSlideChangeEnd: function(swiper){
           $('.series-list').find('.link-active').removeClass('link-active');
           $('.series-list > li').eq(swiper.activeIndex).addClass('link-active');

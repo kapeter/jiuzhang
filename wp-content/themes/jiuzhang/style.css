@@ -144,6 +144,7 @@ a:hover{
 	margin-top: 4px;
 }
 .nav-bars{
+	display: block;
     width: 28px;
     height: 22px;
     font-size: 0;
@@ -153,17 +154,19 @@ a:hover{
 .nav-bars .bar{
     position: absolute;
     left: 0;
+    display: block;
     width: 100%;
     height: 2px;
     background-color: #666;
-	transition: all .35s ease;
-	-webkit-transition: all .35s ease;
+	transition: transform .25s ease;
+	-webkit-transition: transform .25s ease;
 }
 .nav-bars .bar:nth-of-type(1){
 	top: 0;
 }
 .nav-bars .bar:nth-of-type(2){
 	top:10px;
+	visibility:visible;
 }
 .nav-bars .bar:nth-of-type(3){
 	bottom: 0;
@@ -173,7 +176,7 @@ a:hover{
     -webkit-transform: translateY(10px) rotate(-45deg);
 }
 .nav-active .bar:nth-of-type(2){
-    opacity: 0;
+    visibility:hidden;
 }
 .nav-active .bar:nth-of-type(3){
     transform: translateY(-10px) rotate(45deg);
@@ -192,8 +195,8 @@ a:hover{
 	background: rgba(250,250, 250, 0.85);
 	background-size: cover;
 	overflow: hidden;
-	transition: all .35s ease-out;
-	-webkit-transition: all .35s ease-out;
+	transition: all .25s ease-out;
+	-webkit-transition: all .25s ease-out;
 	z-index: 10;
 }
 .nav-first a{

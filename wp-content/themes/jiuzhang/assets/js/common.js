@@ -18,23 +18,23 @@ $(function () {
 		}
 	});
 
-	$('.nav-bars').on('click',function(){
-		if ($('.nav-bars').hasClass('nav-active')){
+
+    var navIsActive = false;
+	$('.nav-bars').on('click',function(event){
+        var e = window.event || event;
+        e.stopPropagation();
+		if (navIsActive){
 			$('.nav-bars').removeClass('nav-active');
 			$('.full-page').removeClass('page-blur');
 			$('.nav').css('left','100%');
-			document.removeEventListener('touchmove',changeMove);
+            navIsActive = false;
 		}else{
 			$('.nav-bars').addClass('nav-active');
 			$('.full-page').addClass('page-blur');
 			$('.nav').css('left','0%');
-			document.addEventListener('touchmove',changeMove);
+            navIsActive = true;
 		}
 	});
-
-	function changeMove(event){
-		event.preventDefault();
-	}
 
     //回到顶部效果
     var timer=null;
@@ -93,6 +93,10 @@ $('.nav-second').find('a').each(function(){
 	$(this).on('click',function(){
 		window.location.reload();
 	});
+});
+
+$(window).on('orientationchange',function () {
+    window.location.reload();
 });
 
 

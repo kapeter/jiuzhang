@@ -64,6 +64,7 @@
 
 		   	var mySwiperA = new Swiper ('.swiper-a', {
 			    loop: true,
+			    freeMode : false,
 			    lazyLoading: true,
 			    lazyLoadingOnTransitionStart : true,
 			    nextButton: '.swiper-button-next',
@@ -74,6 +75,7 @@
 
 			var mySwiperB = new Swiper ('.swiper-b', {
 			    loop: true,
+			    freeMode : false,
 			});
 			mySwiperA.params.control = mySwiperB;
 			mySwiperB.params.control = mySwiperA;
