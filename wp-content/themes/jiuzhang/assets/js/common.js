@@ -1,4 +1,6 @@
 $(function () {
+   
+
 	$('#search-btn').on('click',function(){
 		if ($('.search-bars').hasClass('box-active')){
 			if ($('#search-box').val() != ''){
@@ -20,6 +22,11 @@ $(function () {
 
 
     var navIsActive = false;
+    var winW = $(window).width();
+
+    if (winW < 1200){
+        $('.nav-body').css('height',$(window).height() - 75 + 'px');
+    }
 	$('.nav-bars').on('click',function(event){
         var e = window.event || event;
         e.stopPropagation();
@@ -27,14 +34,27 @@ $(function () {
 			$('.nav-bars').removeClass('nav-active');
 			$('.full-page').removeClass('page-blur');
 			$('.nav').css('left','100%');
+            if (winW < 1200){
+                $('.full-page').css('position','relative');
+            }
             navIsActive = false;
+            $(document).off('mousewheel');
 		}else{
 			$('.nav-bars').addClass('nav-active');
 			$('.full-page').addClass('page-blur');
 			$('.nav').css('left','0%');
             navIsActive = true;
+            if (winW < 1200){
+                $('.full-page').css('position','fixed');
+            }
+            $(document).on('mousewheel',function (event) {
+                var e = window.event || event;
+                e.preventDefault();
+                e.stopPropagation();
+            })
 		}
 	});
+    
 
     //回到顶部效果
     var timer=null;
