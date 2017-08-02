@@ -844,11 +844,8 @@ a:hover{
 	.list-left{
 		width: 300px;
 		margin-right: 60px;
-	}
-	.list-left {
 		position: absolute;
 		top: 0px;
-		z-index: 1000;
 	}
 	.left-active{
 		position: fixed;

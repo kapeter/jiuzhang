@@ -10,9 +10,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
+<meta name="keywords" content="<?php wp_title( ',', true, 'right' );bloginfo('name'); ?>">
+
+<meta name="description" content="九樟学社是一个致力于中国乡土文化现代重塑的社会组织。">
+
 <?php wp_head(); ?>
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/style.css"" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/style.css" />
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/assets/css/swiper.min.css" />
 
