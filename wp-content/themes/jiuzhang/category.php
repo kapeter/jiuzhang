@@ -78,7 +78,7 @@
                       <li>  
                         <h3><a href="<?=the_permalink() ?>" title="<?=the_title() ?>"><?=the_title() ?></a></h3>
                         <span><?=the_time('Y.m.d') ?>&nbsp;&nbsp;&nbsp;&nbsp;<?=get_post_meta($post->ID, 'writer', true) ?></span>
-                        <p><?=mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 250,"..."); ?></p>
+                        <p><?=mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 250,"...","utf-8"); ?></p>
                       </li>  
                       <?php endforeach; ?>
                       <?php else : ?>

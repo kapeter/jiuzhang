@@ -426,6 +426,7 @@ a:hover{
 }
 .list-article-box > li > p{
 	margin-top: 30px;
+	word-break: break-word;
 }
 .list-article-box > li > h3 > a:before{
 	font-size: 28px;
